@@ -1,0 +1,15 @@
+<%= simple_form_for([@estado, @cidade, @loja]) do |f| %>
+	<%= f.input :name , label: "Nome" %>
+	<!-- 
+	<%= f.collection_select :cidade_id , Cidade.all , :id , :name , { prompt: "Qual Cidade" } , class: "form-control" %>
+ -->
+ <%= f.input :endereco %>
+ <%= f.input :telefone %>
+ <%= f.input :email %>
+ <%= f.input :diretor %>
+ <%= f.input :mapa , placeholder: "-23.092460, -47.214627" %>
+ <br>
+ <%= f.button :submit, class: "btn btn-primary" %>
+
+
+<% end %>

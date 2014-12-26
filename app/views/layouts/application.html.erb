@@ -13,8 +13,39 @@
 <body>
 <%= render partial: 'layouts/partials/header' %>
 <div class="container">
+
+<% flash.each do |name, msg| %> 
+	<%= content_tag :div , msg, class: "alert alert-info"  %>
+<% end %>
+
 <%= yield %>
 
 </div>
 </body>
 </html>
+
+
+
+
+<!-- 
+
+<% flash.each do |name, msg| %> 
+<div class="flash flash-notice"> 
+<span class="octicon oction-x flash-close js-flash-close">
+		<%= content_tag :div , msg, class: "alert alert-info" %>
+<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+  <span aria-hidden="true">&times;</span>
+</button>
+
+</span>
+</div>
+<% end %> -->
+
+
+<!-- FUNCIONANDO 
+<% flash.each do |name, msg| %> 
+  <%= content_tag :div , msg, class: "alert alert-info"  %>
+<% end %>
+
+
+ -->

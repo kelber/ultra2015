@@ -2,9 +2,13 @@ class CidadesController < ApplicationController
  
 	before_action :find_estado
 	before_action :find_cidade, only: [:show, :edit, :update, :destroy] 
-
+ #  before_action :find_loja, only: [:show, :edit, :update, :destroy] 
 
   def show
+   # @cidades = @estado.cidades.order("created_at DESC")
+   @cidades = @estado.cidades.order("name DESC")
+   @lojas = @cidade.lojas.all
+  
   end
 
   def new
@@ -41,9 +45,14 @@ class CidadesController < ApplicationController
   	@cidade = Cidade.find(params[:id])
   end
 
+  # def find_loja
+  #   @loja = Loja.find(params[:loja_id])
+  # end
+
   def cidade_params
   	params.require(:cidade).permit(:name, :estado_id)
   end
+
 
 
 

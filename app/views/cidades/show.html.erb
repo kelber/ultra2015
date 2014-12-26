@@ -1,2 +1,12 @@
 <h1><%= @cidade.name %></h1>
 
+
+<%= link_to 'Cadastrar Loja', new_estado_cidade_loja_path(@estado, @cidade), class: "btn btn-primary" %>
+<hr>
+<h3>Listagem de Lojas</h3>
+<% @cidade.lojas.each do |loja| %>
+	<h3><%= link_to loja.name , estado_cidade_loja_path(@estado, @cidade, loja) %></h3>
+	<%= link_to 'Editar Loja', edit_estado_cidade_loja_path(@estado, @cidade, loja), class: "btn btn-default" %>
+	<%= link_to 'Deletar Loja', estado_cidade_loja_path(@estado, @cidade, loja), method: :delete, data: { confirm: "Voce tem certeza?" } , class: "btn btn-danger" %>
+
+<% end %>

@@ -8,6 +8,8 @@ class EstadosController < ApplicationController
 	end
 
 	def show
+		  @estado = Estado.find(params[:id])
+      @cidades = @estado.cidades.order("name ASC")
 	end
 
 	def new
