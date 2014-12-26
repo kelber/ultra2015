@@ -1,0 +1,8 @@
+<h1>Marcas</h1>
+
+<%= link_to 'Cadastrar Marca', new_vehicle_brand_path, class: "btn btn-primary" %>
+<hr>
+
+<% @vehicle_brands.each do |v| %>
+	<h3><%= link_to v.name , v %></h3>
+	<% end %>

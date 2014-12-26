@@ -1,4 +1,4 @@
-<h1><%= @estado.name %></h1>
+<h1><%= image_tag("logoultra250CinzaEscuro.png", size: "100x100", alt: "Ultravisao") %> <%= @estado.name %></h1>
 	<%= link_to 'Deletar Estado' , @estado, method: :delete , data: { confirm: "Voce tem certeza?" } , class: "btn btn-sm btn-danger" %>
 <br>
 <%= link_to 'Voltar', estados_path %>
