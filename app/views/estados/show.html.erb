@@ -1,7 +1,16 @@
 <h1><%= @estado.name %></h1>
-	<%= link_to 'Deletar' , @estado, method: :delete , data: { confirm: "Voce tem certeza?" } , class: "btn btn-sm btn-danger" %>
-	<br>
+	<%= link_to 'Deletar Estado' , @estado, method: :delete , data: { confirm: "Voce tem certeza?" } , class: "btn btn-sm btn-danger" %>
+<br>
 <%= link_to 'Voltar', estados_path %>
-
 <hr>
 <h3>Listagem de Cidades</h3>
+<%= link_to 'Cadastrar Cidade', new_estado_cidade_path(@estado), class: "btn btn-primary" %>
+
+<hr>
+<% @estado.cidades.each do |cidade| %>
+	<h3>
+		<%= link_to cidade.name ,  estado_cidade_path(@estado, cidade) %>
+	</h3>
+
+	<%= link_to 'Deletar', estado_cidade_path(@estado, cidade), method: :delete, data: { confirm: "Voce tem certeza?" } , class: "btn btn-sm btn-danger" %>
+<% end %>

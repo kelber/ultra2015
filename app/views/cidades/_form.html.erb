@@ -1,0 +1,9 @@
+<%= simple_form_for([@estado, @cidade]) do |f| %>
+	<%= f.input :name %>
+<!-- 
+	<%= f.collection_select :estado_id, Estado.all, :id ,:name, { prompt: "Qual Estado?" } , class: "form-control" %>
+	
+	 -->
+	<%= f.button :submit, class: "btn btn-primary" %>
+
+<% end %>

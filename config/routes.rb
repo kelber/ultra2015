@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  
+
   root 'welcome#index'
   get 'sobre', to: 'welcome#sobre', as: :sobre
   # get 'welcome/lojas'
@@ -7,7 +9,9 @@ Rails.application.routes.draw do
   get 'welcome/ultrabook'
   get 'welcome/contato'
 
-  resources :estados
+  resources :estados do
+  	resources :cidades, except: [:index, :update] , dependent: :destroy
+  end
 
 
 
