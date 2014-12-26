@@ -1,0 +1,7 @@
+<h1><%= @estado.name %></h1>
+	<%= link_to 'Deletar' , @estado, method: :delete , data: { confirm: "Voce tem certeza?" } , class: "btn btn-sm btn-danger" %>
+	<br>
+<%= link_to 'Voltar', estados_path %>
+
+<hr>
+<h3>Listagem de Cidades</h3>
