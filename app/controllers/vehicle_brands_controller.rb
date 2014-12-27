@@ -1,6 +1,6 @@
 class VehicleBrandsController < ApplicationController
 
-	before_action :find_vehicle_brand , only: [:show]
+	before_action :find_vehicle_brand , only: [:show, :edit, :update, :destroy]
 
 	def index
 		@vehicle_brands = VehicleBrand.all.order("name ASC")
@@ -16,9 +16,21 @@ class VehicleBrandsController < ApplicationController
 		if @vehicle_brand.save
 			redirect_to @vehicle_brand, notice: "Marca cadastrada com sucesso"
 		else
-		render 'new'
+			render 'new'
 		end
 	end
+
+	# lixo 
+	 # def destroy
+	 # 			@vehicle_brand = VehicleBrand.find(params[:id])
+	 # 		if	@vehicle_name = @vehicle_brand.vehicle_names.destroy
+	 # 	      redirect_to @vehicle_brand, notice: "Veiculo excluido com sucesso"
+  #   else
+  #     render 'show'
+  #   end
+  # end
+
+
 
 	private
 
