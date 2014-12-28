@@ -1,7 +1,7 @@
 <%= simple_form_for([@vehicle_brand, @vehicle_name]) do |f| %>
 	<%= f.input :name, label: "Nome" %>
-	<%= f.input :year %>
-	<%= f.input :obs %>
+	<%= f.input :year, label: "Ano" , placeholder: "Ex: 2014" %>
+	<%= f.input :obs , label: "Observações" %>
 	<br>
 	<%= f.button :submit, class: "btn btn-primary" %>
 

@@ -2,7 +2,10 @@
 <%= link_to 'Voltar', vehicle_brand_path(@vehicle_brand) %>
 	
 <hr>
-<h1><%= @vehicle_name.name %> | <%= @vehicle_name.year %></h1>
+<div class="well">
+<h1 align="center"><%= @vehicle_name.name %> | <%= @vehicle_name.year %></h1>
+<hr>
 
+<h3 align="center"><%= @vehicle_name.obs %></h3>
 
-<h3><%= @vehicle_name.obs %></h3>
+</div>

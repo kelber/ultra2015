@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  
   root 'welcome#index'
   get 'sobre', to: 'welcome#sobre', as: :sobre
   # get 'welcome/lojas'
@@ -16,5 +17,16 @@ Rails.application.routes.draw do
   resources :vehicle_brands do
     resources :vehicle_names , dependent: :destroy
   end
+
+
+  resources :post_categories
+
+
+
+
+
+
+
+
 
 end

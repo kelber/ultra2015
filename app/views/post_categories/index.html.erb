@@ -1,0 +1,10 @@
+<h1>Relação de Assuntos da Ultravisão </h1>
+
+<%= link_to 'Cadastrar Post Categoria', new_post_category_path , class: "btn btn-primary" %>
+<hr>
+
+<% @post_categories.each do |post| %>
+	<h3><%= link_to post.name , post %>  <p> <%= time_ago_in_words(post.created_at) %></p></h3>
+			<%= link_to 'Editar' , edit_post_category_path(post) , class: "btn btn-info" %>
+			<%= link_to 'Deletar', post_category_path(post), method: :delete, data: { confirm: "Voce tem certeza?" } , class: "btn btn-danger" %>
+<% end %>
