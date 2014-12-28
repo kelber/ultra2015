@@ -2,7 +2,14 @@
 	<%= link_to 'Cadastrar post', new_post_path , class: "btn btn-primary" %>
 	<hr>
 
-<% @posts.each do |post| %>
-	<h4><%= link_to post.title, post %></h4>
-
+<% if @posts.count > 0 %>
+		<% @posts.each do |post| %>
+			<h4><%= link_to post.title, post %> <p><%= time_ago_in_words(post.created_at) %></p></h4>
+			
+					<%= link_to 'Editar' , edit_post_path(post), class: "btn btn-info"  %>
+					<%= link_to 'Deletar' , post, method: :delete, data: { confirm: "Voce tem certeza?"  } , class: " btn btn-danger"  %>
+		<hr>
+		<% end %>
+<% else %>
+<%= render 'blank' %>
 <% end %>

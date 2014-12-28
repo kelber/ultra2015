@@ -1,0 +1,8 @@
+<%= simple_form_for([@post_category, @post]) do |f| %>
+		<%= f.collection_select :post_category, PostCategory.all, :id , :name , { prompt: "Qual Tema?" }, class: "form-control"  %>
+		<%= f.input :title %>
+		<%= f.input :post , input_html: { rows: 10 } %>
+		<br>
+		<%= f.button :submit, class: "btn btn-primary" %>
+
+	<% end %>

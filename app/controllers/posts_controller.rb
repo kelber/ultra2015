@@ -9,6 +9,8 @@ class PostsController < ApplicationController
   def show
   end
 
+   def edit
+  end
 
   def new
   	@post = Post.new
@@ -24,11 +26,24 @@ class PostsController < ApplicationController
   end
 	
 
-  def show
+  def update
+    if @post.update(post_params)
+      redirect_to @post, notice: "Post atualizado com sucesso" 
+    else
+      render ' edit' 
+    end
   end
 
-  def edit
+
+  def destroy
+    if @post.destroy
+      redirect_to posts_path , notice: "Deletado com sucesso" 
+    else 
+      render 'show' 
+    end
   end
+
+ 
 
 
 

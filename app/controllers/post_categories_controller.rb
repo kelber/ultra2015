@@ -4,7 +4,6 @@ class PostCategoriesController < ApplicationController
 	before_action :find_post_category, only: [:show, :edit, :update, :destroy] 
 
 
-
   def index
   	@post_categories = PostCategory.all.order("created_at DESC")
   end
