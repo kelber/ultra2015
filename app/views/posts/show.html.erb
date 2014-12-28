@@ -1,0 +1,8 @@
+<div class="well">
+
+<h1 align="center"><%= @post.title %></h1>
+	<h3 align="center"><%= time_ago_in_words(@post.created_at) %></h3>
+</div>
+<%= link_to 'Voltar', posts_path , class: "btn btn-primary" %>
+<hr>
+<h3><%= @post.post %></h3>

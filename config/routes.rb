@@ -21,7 +21,8 @@ Rails.application.routes.draw do
 
   resources :post_categories
 
-
+  resources :posts
+  
 
 
 
